@@ -112,8 +112,9 @@ class Cart extends React.Component {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                product_id: event.target.value
-                // product_id: event.target.getAttribute('product_id')
+                user_id:localStorage.getItem('user_id'),
+                // product_id: event.target.value
+                product_id: event.target.getAttribute('product_id')
             })
         };
         // console.log(postData);
@@ -149,6 +150,7 @@ class Cart extends React.Component {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+                user_id:localStorage.getItem('user_id'),
                 product_id: event.target.value
             })
         };
