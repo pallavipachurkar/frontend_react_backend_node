@@ -389,7 +389,11 @@ class AddProduct extends Component {
                         <input id='discount' type='number' className="form-control" value={this.state.discount} onChange={this.updateProductDiscount} name="discount" />
                     </div>
                     <div className='mb-3 mt-3'>
-                        <label htmlFor='product_quentity' className="form-label">Product Quentity: </label>
+                        <label htmlFor='product_quentity' className="form-label">Avalable Product Stock: </label>
+                        <input id='product_quentity' type='number' className="form-control" onChange={this.updateProductquantity} name="product_quentity" />
+                    </div>
+                    <div className='mb-3 mt-3'>
+                        <label htmlFor='product_quentity' className="form-label">Mini Product Stock: </label>
                         <input id='product_quentity' type='number' className="form-control" onChange={this.updateProductquantity} name="product_quentity" />
                     </div>
                     <div className='mb-3 mt-3'>

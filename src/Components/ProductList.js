@@ -17,7 +17,7 @@ class ProductList extends Component {
 
             category_id: 0,
             category_name: "",
-            searchCategory:""
+            searchCategory: ""
         }
         this.showProduct();
 
@@ -44,9 +44,9 @@ class ProductList extends Component {
             )
 
     }
-    
+
     searchCategory = (event) => {
-        let sw=event.target.value
+        let sw = event.target.value
         let postData = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -68,7 +68,7 @@ class ProductList extends Component {
                     this.setState(updatedValue);
                     console.log(this.setState(updatedValue));
 
-                }   
+                }
             )
 
     }
@@ -81,7 +81,7 @@ class ProductList extends Component {
         console.log('Selected: ', sw);
     }
     //
-    
+
 
     gotoproductCategory = (event) => {
         console.log("event")
@@ -92,7 +92,7 @@ class ProductList extends Component {
 
     }
 
-//
+    //
     showProduct = () => {
         fetch('http://localhost:8082/get_product_list')
             .then(
@@ -133,7 +133,7 @@ class ProductList extends Component {
                     console.log(this.setState(updatedValue));
 
 
-                }   
+                }
             )
 
     }
@@ -192,7 +192,7 @@ class ProductList extends Component {
         window.location.href = "product_description?product_id=" + event.target.getAttribute('product_id');
 
     }
-    
+
 
     render() {
         let flag = true
@@ -230,7 +230,7 @@ class ProductList extends Component {
                                         <tbody>
                                             <tr category_id={category.category_id} onClick={this.searchCategory}>
                                                 <td category_id={category.category_id} onClick={this.searchCategory}>{category.category_name}</td>
-                                            </tr> 
+                                            </tr>
 
                                         </tbody>
                                     ))
@@ -249,7 +249,9 @@ class ProductList extends Component {
                                         <h3 className='text-capitalize'>{product.product_name}</h3>
                                         <h5>Rs. {product.product_price} /-</h5>
                                         <h6>quantity : {product.quantity}</h6>
-                                        <button className="btn btn-secondary" value={product.product_id} onClick={this.addCart}>Add to cart</button>
+                                        <button className="btn btn-secondary" value={product.product_id} onClick={this.addCart}>Add to cart <svg style={{ color: '#fff' }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                        </svg></button>
                                         {/* <button className='btn btn-secondary p-3 m-3' product_id={product.product_id} onClick={this.gotoproduct}>Edit</button> */}
 
                                     </div>

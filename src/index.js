@@ -4,17 +4,7 @@ import './index.css';
 
 import './App.css';
 import AddUpdateDelete from './Components/AddUpdateDelete';
-import ClassComponent1 from './Components/ClassComponent';
-import Constructor from './Components/Constructor';
-import ClassComponent from './Components/DataFatch';
-import First from './Components/Demo1';
-import DomConcept from './Components/DomConcept';
-import ForceUpdateMeth from './Components/ForceUpdateMeth';
-import LoginComponent from './Components/LoginComponent';
 import ProductComponent from './Components/AddProduct';
-import ReactProps from './Components/ReactProps';
-import StateExample from './Components/StateExample';
-import StatePropsValidator from './Components/StatePropsValidator';
 import Navbar from './inc/Header';
 
 
@@ -71,14 +61,7 @@ root.render(
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
-  // <React.StrictMode>
-  //   {/* <Layout /> */}
-  //   {/* <App /> */}
-  //   {/* <LoginComponent /> */}
-  //     <ProductComponent />
-  //     <ProductListComponent />
-
-  // </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

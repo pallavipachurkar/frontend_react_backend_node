@@ -256,22 +256,22 @@ class Cart extends React.Component {
 
                 }
             );
-        // fetch('http://localhost:8082/delete_all', postData)
-        //     .then(
-        //         res => res.json()
-        //     )
-        //     .then(
-        //         res => {
-        //             console.log(res)
-        //             if (res.success) {
-        //                 alert("cleared for userid?!!");
+        fetch('http://localhost:8082/delete_all', postData)
+            .then(
+                res => res.json()
+            )
+            .then(
+                res => {
+                    console.log(res)
+                    if (res.success) {
+                        alert("cleared for userid?!!");
 
-        //             }
-        //             else {
-        //                 alert("Failed !!");
-        //             }
-        //         }
-        //     );
+                    }
+                    else {
+                        alert("Failed !!");
+                    }
+                }
+            );
 
     }
 

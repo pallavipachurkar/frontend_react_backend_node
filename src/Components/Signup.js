@@ -78,7 +78,7 @@ class Signup extends Component {
         console.log(this.state.users)
         window.location.href = "login";
         alert('signup done')
-    
+
         let postData = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -103,9 +103,9 @@ class Signup extends Component {
             .then(
                 res => {
                     console.log(res)
-                   
-                    }
-                 
+
+                }
+
             );
 
     }
@@ -163,7 +163,12 @@ class Signup extends Component {
                     <div className='mb-3 mt-3'>
                         <label htmlFor="password" className="form-label">Password:</label>
                         <input id="password" className="form-control" type="text" placeholder='password' value={this.state.password} onChange={this.updatePassword} name="password" />
+                        {/* <label htmlFor="password" className="form-label">Confirm Password:</label> */}
+                        <br></br>
+                        <input id="password" className="form-control" type="text" placeholder='Confirm Password' value={this.state.password} onChange={this.updatePassword} name="password" />
+
                     </div>
+
 
 
                     <div className='mb-3 mt-3'>
