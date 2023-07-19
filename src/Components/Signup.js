@@ -10,9 +10,11 @@ class Signup extends Component {
             last_name: "",
             email: "",
             password: "",
+            confirm_password:"",
             address: "",
             mobile_number: "",
-            pincode: ""
+            pincode: "",
+            otp:""
 
 
         }
@@ -43,6 +45,11 @@ class Signup extends Component {
         this.setState(updatedValue)
 
     }
+    Updateconfirm_password = (event) => {
+        let users = event.target.value
+        const updatedValue = { confirm_password: users }
+        this.setState(updatedValue)
+    }
     updateAddress = (event) => {
         let users = event.target.value
         const updatedValue = { address: users }
@@ -68,7 +75,17 @@ class Signup extends Component {
         users.push(this.state.first_name)
         users.push(this.state.last_name)
         users.push(this.state.email)
-        users.push(this.state.password)
+        if(this.state.password==this.state.confirm_password){
+            users.push(this.state.password)
+            alert('ok')
+        }
+        else{
+            alert("please re-enter the correct password");
+            return;
+        }
+        
+        users.push(this.state.confirm_password)
+
         users.push(this.state.address)
         users.push(this.state.mobile_number)
         users.push(this.state.pincode)
@@ -88,6 +105,8 @@ class Signup extends Component {
                 last_name: this.state.last_name,
                 email: this.state.email,
                 password: this.state.password,
+                confirm_password: this.state.confirm_password,
+
                 address: this.state.address,
                 mobile_number: this.state.mobile_number,
                 pincode: this.state.pincode
@@ -102,7 +121,7 @@ class Signup extends Component {
             )
             .then(
                 res => {
-                    console.log(res)
+                    console.log(res) 
 
                 }
 
@@ -161,28 +180,34 @@ class Signup extends Component {
                         <input id='email' type='text' className="form-control" value={this.state.email} onChange={this.updateEmail} name="email" />
                     </div>
                     <div className='mb-3 mt-3'>
+                        <label htmlFor="address" className="form-label">Address:</label>
+                        <input id="address" className="form-control" type="text" placeholder='address' value={this.state.address} onChange={this.updateAddress} name="address" />
+
+                    </div>
+                    <div className='mb-3 mt-3'>
+                        <label htmlFor="pincode" className="form-label">Pincode:</label>
+                        <input id="pincode" className="form-control" type="text" placeholder='pincode' value={this.state.pincode} onChange={this.updatePincode} name="pincode" />
+
+                    </div>
+                    <div className='mb-3 mt-3'>
                         <label htmlFor="password" className="form-label">Password:</label>
                         <input id="password" className="form-control" type="text" placeholder='password' value={this.state.password} onChange={this.updatePassword} name="password" />
-                        {/* <label htmlFor="password" className="form-label">Confirm Password:</label> */}
-                        <br></br>
-                        <input id="password" className="form-control" type="text" placeholder='Confirm Password' value={this.state.password} onChange={this.updatePassword} name="password" />
 
                     </div>
 
-
-
                     <div className='mb-3 mt-3'>
-                        <label htmlFor='address' className="form-label">Address: </label>
-                        <input id='address' type='text' className="form-control" onChange={this.updateAddress} name="address" />
+                        <label htmlFor="password" className="form-label">Confirm Password:</label>
+                        <input id="password" className="form-control" type="text" placeholder='Confirm Password' value={this.state.confirm_password} onChange={this.Updateconfirm_password} name="password" />
                     </div>
                     <div className='mb-3 mt-3'>
                         <label htmlFor='mobile_number' className="form-label">Mobile Number: </label>
                         <input id='mobile_number' className="form-control" type='text' value={this.state.mobile_number} onChange={this.updateMobileNumber} name="mobile_number" />
                     </div>
-                    <div className="mb-3 mt-3">
-                        <label htmlFor="pincode" className="form-label">Pincode:</label>
-                        <input type="text" value={this.state.pincode} onChange={this.updatePincode} className="form-control" id="pincode" placeholder="Enter pincode" name="pincode" />
+                    <div className='mb-3 mt-3'>
+                        <label htmlFor='mobile_number' className="form-label">otp: </label>
+                        <input id='otp' className="form-control" type='text' value={this.state.otp} onChange={this.updateMobileNumber} name="mobile_number" />
                     </div>
+
                     <button className='btn btn-secondary' onClick={this.addUser} >Sign Up</button>
                 </div>
             </div>

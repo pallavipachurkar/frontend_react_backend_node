@@ -7,13 +7,13 @@ class Login extends React.Component {
         // It will call constructor method in Parent Class
         super(props);
         this.state = {
-            brand: "Ford",
-            model: "Mustang",
-            color: "red",
-            year: 45445,
-            counter: 0,
-            text: "Dummy Text",
-            testArray: [1, 2, 3, 4, 5],
+            // brand: "Ford",
+            // model: "Mustang",
+            // color: "red",
+            // year: 45445,
+            // counter: 0,
+            // text: "Dummy Text",
+            // testArray: [1, 2, 3, 4, 5],
             usersData: { "data": [] },
             loggedIn: false,
             username: "",
@@ -21,8 +21,8 @@ class Login extends React.Component {
             error: ""
 
         };
-        let sw = [1, 2, 3, 4, 5];
-        sw.map((a) => (console.log(a)));
+        // let sw = [1, 2, 3, 4, 5];
+        // sw.map((a) => (console.log(a)));
 
     }
 
@@ -84,6 +84,9 @@ class Login extends React.Component {
         const updatedValue = { password: sw };
         this.setState(updatedValue);
     }
+    goToSignUpPage=()=>{
+        window.location.href ='signup_user'
+    }
 
 
     render() {
@@ -109,7 +112,7 @@ class Login extends React.Component {
                         <h1> {this.state.error} </h1>
 
                             <button onClick={this.login} className="btn btn-primary"> Login</button><br></br>
-                            {/* <button className='btn btn-primary mt-3' onClick={this.addUser} >Sign Up</button> */}
+                            <button className='btn btn-primary mt-3' onClick={this.goToSignUpPage} >Sign Up</button>
                       
                     </div>  
 

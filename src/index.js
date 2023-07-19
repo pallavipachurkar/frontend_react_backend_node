@@ -31,6 +31,8 @@ import Logout from './Components/Logout';
 import EditProduct from './Components/EditProduct';
 import Product from './Components/Product';
 import Report from './Components/Report';
+import BusinessUserSignup from './Business/BusinessUserSignup';
+// import BusinessDetails from './Business/BusinessDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,6 +44,11 @@ root.render(
           <Route path="login" element={<Login />} />
           <Route path="logout" element={<Logout />} />
           <Route path="signup_user" element={<Signup />} />
+          <Route path="business_signup_user" element={<BusinessUserSignup />} />
+
+          {/* <Route path="business_details" element={<BusinessDetails />} /> */}
+
+
 
           <Route path="add_product" element={<AddProduct />} />
           <Route path="product" element={<Product />} />

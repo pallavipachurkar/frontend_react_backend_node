@@ -18,15 +18,16 @@ const Layout = () => {
                                 <Link className="nav-link" aria-current="page" to="/product">Product</Link>
                             </li>
 
-                            {/* <li className="nav-item">
-                                <Link className="nav-link"  aria-current="page" to="/update_category">Edit Category</Link>
-                            </li> */}
+                            <li className="nav-item">
+                                <Link className="nav-link"  aria-current="page" to="/business_signup_user">Business signup user</Link>
+                            </li>
+                           
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/product_list">Search</Link>
                             </li>
-                            {/* <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/cart">Cart</Link>
-                            </li> */}
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/business_details">Business Details</Link>
+                            </li>
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/report">Report</Link>
                             </li>
@@ -44,13 +45,13 @@ const Layout = () => {
                     </div>
                     <div className="order-lg-last col-lg-5 col-sm-8 col-8">
                         <div className="d-flex float-end" style={{ color: '#fff' }}>
-                            <a href="/signup_user" className="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
+                            {/* <a href="/signup_user" className="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
                                 <i className="fas fa-user-alt m-1 me-md-2"></i>
                                 <Link className="nav-link" aria-current="page" to="/signup_user">Signup</Link>
 
-                                {/* <p className="d-none d-md-block mb-0">Sign in</p> */}
-                            </a>
-                            <a href="https://github.com/mdbootstrap/bootstrap-material-design" className="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
+                                <p className="d-none d-md-block mb-0">Sign in</p>
+                            </a> */}
+                            {/* <a href="https://github.com/mdbootstrap/bootstrap-material-design" className="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
                                 <i className="fas fa-heart m-1 me-md-2"></i>
                                 <p className="d-none d-md-block mb-0">Wishlist</p>
                             </a>
@@ -58,8 +59,8 @@ const Layout = () => {
                                 <i className="fas fa-shopping-cart m-1 me-md-2"></i>
                                 <Link className="nav-link" aria-current="page" to="/cart">My Cart</Link>
 
-                                {/* <p className="d-none d-md-block mb-0">My cart</p> */}
-                            </a>
+                                <p className="d-none d-md-block mb-0">My cart</p>
+                            </a> */}
                         </div>
                     </div>
                     {/* <div className="pe-3">
